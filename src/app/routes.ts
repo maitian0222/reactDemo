@@ -3,30 +3,30 @@ import { lazy } from 'react';
 import * as Loadable from 'react-loadable';
 import Loading from './Loading';
 
-// import BaseTheme from '../component/context/BaseTheme';
-// import DynamicTheme from '../component/context/DynamicTheme';
-// import ThemeHoc from '../component/context/ThemeHoc';
-const BaseTheme = Loadable({
-  loader: () => import('../component/context/BaseTheme'),
-  loading: Loading,
-  delay: 200,
-});
+import BaseTheme from '../component/context/BaseTheme';
+import DynamicTheme from '../component/context/DynamicTheme';
+import ThemeHoc from '../component/context/ThemeHoc';
+// const BaseTheme = Loadable({
+//   loader: () => import('../component/context/BaseTheme'),
+//   loading: Loading,
+//   delay: 200,
+// });
 
-const DynamicTheme = Loadable({
-  loader: () => import('../component/context/DynamicTheme'),
-  loading: Loading,
-});
+// const DynamicTheme = Loadable({
+//   loader: () => import('../component/context/DynamicTheme'),
+//   loading: Loading,
+// });
 
-const ThemeHoc = Loadable({
-  loader: () => import('../component/context/ThemeHoc'),
-  loading: Loading,
-});
+// const ThemeHoc = Loadable({
+//   loader: () => import('../component/context/ThemeHoc'),
+//   loading: Loading,
+// });
 
-// const DynamicThemeFunction = lazy(() =>
-//   import('../component/context/DynamicThemeFunction'),
-// );
+const DynamicThemeFunction = lazy(() =>
+  import('../component/context/DynamicThemeFunction'),
+);
 
-import DynamicThemeFunction from '../component/context/DynamicThemeFunction';
+// import DynamicThemeFunction from '../component/context/DynamicThemeFunction';
 import ThemeGouzi from '../component/context/ThemeGouzi';
 import BaseExample from '../component/hoc/BaseExample';
 import Counter from '../component/hook/Counter';

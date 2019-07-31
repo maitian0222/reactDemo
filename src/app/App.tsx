@@ -9,13 +9,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import history from './history';
 export default function App() {
   return (
-    // <Provider store={store}>
-    //   <LocaleProvider locale={zh_CN}>
-    //     <Router history={history}>
-    //       <LayoutContainer />
-    //     </Router>
-    //   </LocaleProvider>
-    // </Provider>
-    <div>lalala~</div>
+    <Provider store={store}>
+      <LocaleProvider locale={zh_CN}>
+        <Router history={history}>
+          <LayoutContainer />
+        </Router>
+      </LocaleProvider>
+    </Provider>
+    // <div>lalala~</div>
   );
 }
