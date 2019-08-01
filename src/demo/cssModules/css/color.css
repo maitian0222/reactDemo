@@ -1,0 +1,7 @@
+@value blue: #aaf200;
+@value red: #0c77f8;
+@value green: #ff0000;
+
+.bg-color {
+  background-color: blue;
+}

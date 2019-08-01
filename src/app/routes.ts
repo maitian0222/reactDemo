@@ -48,6 +48,10 @@ const TestImmer = Loadable({
   loader: () => import('src/demo/immer/TestImmer'),
   loading: Loading,
 });
+const TestCssModules = Loadable({
+  loader: () => import('src/demo/cssModules/Test'),
+  loading: Loading,
+});
 const routes = [
   {
     path: '/context/base',
@@ -153,6 +157,11 @@ const routes = [
     path: '/demo/immer',
     component: TestImmer,
     title: 'immer',
+  },
+  {
+    path: '/demo/cssModules',
+    component: TestCssModules,
+    title: 'cssModules',
   },
 ];
 

@@ -1,0 +1,7 @@
+@value colors: "./color.css";
+@value blue, red, green from colors;
+
+.title {
+  color: red;
+  composes: bg-color from './color.css';
+}
