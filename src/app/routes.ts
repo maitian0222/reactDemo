@@ -44,6 +44,10 @@ import WorkCalendar from '../Calendar1/Calendar';
 import StudentList from '../component/user/StudentList';
 import PopoverDemo from 'src/demo/popover/PopoverDemo';
 
+const TestImmer = Loadable({
+  loader: () => import('src/demo/immer/TestImmer'),
+  loading: Loading,
+});
 const routes = [
   {
     path: '/context/base',
@@ -144,6 +148,11 @@ const routes = [
     path: '/demo/popover',
     component: PopoverDemo,
     title: 'popover',
+  },
+  {
+    path: '/demo/immer',
+    component: TestImmer,
+    title: 'immer',
   },
 ];
 

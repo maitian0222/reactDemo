@@ -29,11 +29,11 @@ const noonDays = [11, 12, 13, 14, 15, 26, 27, 28, 29, 30, 31];
 function dateCellRender(date: Moment) {
   const dateStr = parseInt(date.format('D'), 10);
   if (morningDays.indexOf(dateStr) !== -1) {
-    return <Badge status="success" text="早班" />;
+    return <Badge status="success" text="" />;
   } else if (nightDays.indexOf(dateStr) !== -1) {
-    return <Badge status="error" text="夜班" />;
+    return <Badge status="error" text="" />;
   } else if (noonDays.indexOf(dateStr) !== -1) {
-    return <Badge status="default" text="二班" />;
+    return <Badge status="default" text="" />;
   }
 }
 
@@ -52,7 +52,7 @@ function dateFullCellRender(date: Moment) {
         <div className="ant-fullcalendar-content">
           <span className="ant-badge ant-badge-status ant-badge-not-a-wrapper">
             <span className="ant-badge-status-dot ant-badge-status-success" />
-            <span className="ant-badge-status-text">早班</span>
+            <span className="ant-badge-status-text" />
           </span>
           <p style={{ textAlign: 'center' }}>
             {(dateStr === 5 || dateStr === 20) && <HeartIcon />}
@@ -72,7 +72,7 @@ function dateFullCellRender(date: Moment) {
         <div className="ant-fullcalendar-content">
           <span className="ant-badge ant-badge-status ant-badge-not-a-wrapper">
             <span className="ant-badge-status-dot ant-badge-status-error" />
-            <span className="ant-badge-status-text">夜班</span>
+            <span className="ant-badge-status-text" />
           </span>
           <p style={{ textAlign: 'center' }}>
             {(dateStr === 6 || dateStr === 21) && <HeartIcon />}
@@ -87,7 +87,7 @@ function dateFullCellRender(date: Moment) {
         <div className="ant-fullcalendar-content">
           <span className="ant-badge ant-badge-status ant-badge-not-a-wrapper">
             <span className="ant-badge-status-dot ant-badge-status-default" />
-            <span className="ant-badge-status-text">二班</span>
+            <span className="ant-badge-status-text" />
           </span>
         </div>
       </div>
