@@ -24,13 +24,8 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
     super(props);
   }
 
-  public componentDidMount() {}
-  public renderChildren() {
-    return <MainLayout />;
-  }
-
   public render() {
-    return this.renderChildren();
+    return <MainLayout> {this.props.children}</MainLayout>;
   }
 }
 

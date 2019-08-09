@@ -116,6 +116,7 @@ class NavMenu extends Component<Props, State> {
     this.setState({
       selectedKeys: [path],
     });
+    this.props.history.push(path);
   };
 
   // 点击含有子菜单的菜单节点
@@ -167,10 +168,10 @@ class NavMenu extends Component<Props, State> {
                 key={item.path}
                 onClick={() => this.onChangeSelectMenu(item.path)}
               >
-                <Link to={item.path}>
-                  {item.icon && <Icon type={item.icon} />}
-                  <span>{item.menuName}</span>
-                </Link>
+                {/* <Link to={item.path}> */}
+                {item.icon && <Icon type={item.icon} />}
+                <span>{item.menuName}</span>
+                {/* </Link> */}
               </Menu.Item>
             ) : (
               <SubMenu
@@ -188,7 +189,8 @@ class NavMenu extends Component<Props, State> {
                     key={item.path}
                     onClick={() => this.onChangeSelectMenu(item.path)}
                   >
-                    <Link to={item.path}>{item.menuName}</Link>
+                    {item.menuName}
+                    {/* <Link to={item.path}></Link> */}
                   </Menu.Item>
                 ))}
               </SubMenu>

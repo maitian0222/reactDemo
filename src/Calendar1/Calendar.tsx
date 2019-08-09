@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Badge, Icon } from 'antd';
 import * as Loadable from 'react-loadable';
 // import CalendarHeader from './component/CalendarHeader';
-import http from '@sinoui/http';
-import StopInfo from './types/StopInfoType';
 import moment, { Moment } from 'moment';
-import ResponseResult from '../../types/ResponseResult';
 import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
 

@@ -1,0 +1,30 @@
+.navTabsLayout {
+  position: relative;
+  z-index: 102;
+  width: 100%;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.navTabsInner {
+  width: 100%;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  height: 26px;
+  margin-top: 5px;
+  padding-left: 12px;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  transition-duration: 0ms;
+  transform: translate(0px, 0px) translateZ(0px);
+  justify-content: space-between;
+  padding-right: 40px;
+}
+
+:global(.sinoui-page-content__hidden) {
+  display: none;
+}
+:global(.sinoui-page-content__shown) {
+  display: block;
+}

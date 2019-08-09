@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Select, Form } from 'antd';
-import http from '@sinoui/http';
 import { Moment } from 'moment';
-import StopInfoType from '../types/StopInfoType';
-import CourtType from '../../court/types/Court';
 
 interface Props {
   value: Moment;
