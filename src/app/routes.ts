@@ -53,9 +53,14 @@ const TestCssModules = Loadable({
   loading: Loading,
 });
 
-const DndSimple = Loadable({
+const EchartsDemo = Loadable({
   // src/demo/reactDnd/simple/App
-  loader: () => import('src/demo/reactDnd/dustbin/App'),
+  loader: () => import('src/demo/echarts/Demo'),
+  loading: Loading,
+});
+
+const DndCustomLayout = Loadable({
+  loader: () => import('src/demo/dnd/App'),
   loading: Loading,
 });
 const routes = [
@@ -161,16 +166,23 @@ const routes = [
     component: PopoverDemo,
     title: 'popover',
   },
+
   {
-    path: '/demo/reactDnd',
-    component: DndSimple,
-    title: 'reactDnd simple',
+    path: '/demo/echarts',
+    component: EchartsDemo,
+    title: 'EchartsDemo',
   },
   {
     path: '/demo/immer',
     component: TestImmer,
     title: 'immer',
   },
+  {
+    path: '/demo/dndCustomLayout',
+    component: DndCustomLayout,
+    title: 'DndCustomLayout',
+  },
+
   {
     path: '/demo/cssModules',
     component: TestCssModules,
