@@ -1,5 +1,7 @@
 import React from 'react';
-import { Tag, Icon } from 'antd';
+import { Icon } from 'antd';
+import classNames from 'classnames';
+const styles = require('../style.css');
 function NavTab({
   zIndex,
   selected,
@@ -18,47 +20,47 @@ function NavTab({
   closable: boolean;
 }) {
   return (
-    // <div
-    //   style={{
-    //     backgroundColor: selected ? 'red' : 'transparent',
-    //   }}
-    //   onClick={() => onClick(pageId)}
-    // >
-    //   <span title={title}>{title}</span>
-    //   {closable !== false && (
-    //     <span
-    //       className="sinoui-nav-tab-close_icon"
-    //       onClick={(e) => {
-    //         e.stopPropagation();
-    //         e.preventDefault();
-    //         onRequestClose(pageId);
-    //       }}
-    //     >
-    //       -
-    //     </span>
-    //   )}
-    // </div>
-    <Tag
+    <div
+      className={classNames(styles.tab, {
+        [styles['tab-selected']]: selected,
+      })}
       onClick={() => onClick(pageId)}
-      closable={closable}
-      checked={selected}
-      onClose={(e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        onRequestClose(pageId);
-      }}
       title={title}
-      style={
-        selected
-          ? {
-              backgroundColor: '#1890ff',
-              color: '#fff',
-            }
-          : {}
-      }
     >
-      {title}
-    </Tag>
+      <div className={styles['tab-text']}>{title}</div>
+      {closable !== false && (
+        <Icon
+          onClick={(e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            onRequestClose(pageId);
+          }}
+          type="close"
+          className={styles['tab-close-icon']}
+        />
+      )}
+    </div>
+    // <Tag
+    //   onClick={() => onClick(pageId)}
+    //   closable={closable}
+    //   checked={selected}
+    //   onClose={(e) => {
+    //     e.stopPropagation();
+    //     e.preventDefault();
+    //     onRequestClose(pageId);
+    //   }}
+    //   title={title}
+    //   style={
+    //     selected
+    //       ? {
+    //           backgroundColor: '#1890ff',
+    //           color: '#fff',
+    //         }
+    //       : {}
+    //   }
+    // >
+    //   {title}
+    // </Tag>
   );
 }
 

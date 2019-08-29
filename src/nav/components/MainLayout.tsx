@@ -33,8 +33,8 @@ export default class MainLayout extends React.PureComponent {
               changeMenuCollapsed={this.changeMenuCollapsed}
               currentUser={this.props.currentUser}
             />
+            <NavTabs />
             <div className={styles.appContent}>
-              <NavTabs />
               <div
                 style={{
                   background: '#ffffff',

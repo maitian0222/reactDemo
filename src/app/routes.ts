@@ -22,11 +22,11 @@ import ThemeHoc from '../component/context/ThemeHoc';
 //   loading: Loading,
 // });
 
-const DynamicThemeFunction = lazy(() =>
-  import('../component/context/DynamicThemeFunction'),
-);
+// const DynamicThemeFunction = lazy(() =>
+//   import('../component/context/DynamicThemeFunction'),
+// );
 
-// import DynamicThemeFunction from '../component/context/DynamicThemeFunction';
+import DynamicThemeFunction from '../component/context/DynamicThemeFunction';
 import ThemeGouzi from '../component/context/ThemeGouzi';
 import BaseExample from '../component/hoc/BaseExample';
 import Counter from '../component/hook/Counter';
@@ -43,13 +43,19 @@ import ShoopingCustomHook from '../component/shopping/customHook/Main';
 import WorkCalendar from '../Calendar1/Calendar';
 import StudentList from '../component/user/StudentList';
 import PopoverDemo from 'src/demo/popover/PopoverDemo';
-
+import { CacheLevel } from '../navTabs';
 const TestImmer = Loadable({
   loader: () => import('src/demo/immer/TestImmer'),
   loading: Loading,
 });
 const TestCssModules = Loadable({
   loader: () => import('src/demo/cssModules/Test'),
+  loading: Loading,
+});
+
+const DndSimple = Loadable({
+  // src/demo/reactDnd/simple/App
+  loader: () => import('src/demo/reactDnd/dustbin/App'),
   loading: Loading,
 });
 const routes = [
@@ -127,6 +133,7 @@ const routes = [
     path: '/demo/reducerShopping',
     component: ShoppingContextDemo,
     title: '使用hook useResucer  useContext 实现购物车',
+    cacheLevel: CacheLevel.NONE,
   },
   {
     path: '/demo/customCarList',
@@ -147,11 +154,17 @@ const routes = [
     path: '/user/student',
     component: StudentList,
     title: '学生列表',
+    cacheLevel: CacheLevel.NONE,
   },
   {
     path: '/demo/popover',
     component: PopoverDemo,
     title: 'popover',
+  },
+  {
+    path: '/demo/reactDnd',
+    component: DndSimple,
+    title: 'reactDnd simple',
   },
   {
     path: '/demo/immer',

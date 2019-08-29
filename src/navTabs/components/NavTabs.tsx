@@ -1,9 +1,7 @@
 import React from 'react';
-
 import NavTab from './NavTab';
 import Page from '../types/Page';
-import NavButtons from './NavButtons';
-
+import OverflowTabs from './OverflowTabs';
 import styles from '../style.css';
 interface Props {
   items: ReadonlyArray<Page>;
@@ -31,18 +29,14 @@ export default function NavTabs({
   const selectTab = items.slice(items.length - 1);
   const exceptLastItems = items.slice(0, items.length - 1);
 
-  adjustItems = [
-    ...exceptLastItems.slice(0, showTabsLen - 1),
-    ...selectTab,
-    ...exceptLastItems.slice(showTabsLen - 1),
-  ];
+  adjustItems = [...exceptLastItems.slice(0, showTabsLen - 1), ...selectTab];
 
   const newItems = items && items.length > showTabsLen ? adjustItems : items;
 
   return (
     <div className={styles['navTabsLayout']}>
       <div className={styles['navTabsInner']}>
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', flex: 1 }}>
           {newItems.map((tab, index) => (
             <NavTab
               closable={index !== 0}
@@ -56,6 +50,13 @@ export default function NavTabs({
             />
           ))}
         </div>
+        <OverflowTabs
+          items={items}
+          onClick={onClick}
+          onRequestCloseTab={onRequestCloseTab}
+          onRequestCloseAllTab={onRequestCloseAllTab}
+          activePageId={activePageId}
+        />
       </div>
     </div>
   );
